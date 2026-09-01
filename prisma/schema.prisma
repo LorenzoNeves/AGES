@@ -14,7 +14,8 @@ generator client {
 model DimCliente {
   id_cliente            Int       @id @default(autoincrement())
   nome                  String    @db.VarChar(150)
-  email                 String?   @db.VarChar(100)
+  email                 String   @db.VarChar(100)
+  senha                 String?   @db.VarChar(255)
   telefone              String?   @db.VarChar(20)
   cpf                   String?   @unique @db.VarChar(14)
   data_nascimento       DateTime?
@@ -77,7 +78,7 @@ model DimFornecedor {
   
   nome_fornecedor       String    @db.VarChar(150)
   cnpj                  String?   @unique @db.VarChar(18)
-  email                 String?   @db.VarChar(100)
+  email                 String   @db.VarChar(100)
   telefone              String?   @db.VarChar(20)
   
   rua                   String?   @db.VarChar(150)
@@ -130,7 +131,7 @@ model DimFarmacia {
   estado                String?   @db.VarChar(2)
   
   telefone              String?   @db.VarChar(20)
-  email                 String?   @db.VarChar(100)
+  email                 String   @db.VarChar(100)
   
   gerente_nome          String?   @db.VarChar(100)
   gerente_telefone      String?   @db.VarChar(20)
@@ -150,7 +151,7 @@ model DimVendedor {
   
   nome_vendedor         String    @db.VarChar(100)
   cpf                   String?   @unique @db.VarChar(14)
-  email                 String?   @db.VarChar(100)
+  email                 String   @db.VarChar(100)
   telefone              String?   @db.VarChar(20)
   
   cargo                 String?   @db.VarChar(50)
